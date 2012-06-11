@@ -1,0 +1,36 @@
+/** Add css rules here for your application. */
+h2 {
+font-weight: bold;
+  color: black ;
+  margin: 10px 20px 10px;
+  text-align: left;
+}
+
+h3 {
+font-weight: bold;
+  color: #7777777 ;
+  margin: 10px 20px 10px;
+  text-align: left;
+}
+
+p {
+  color: black ;
+  margin: 5px 30px 5px;
+  text-align: left;
+}
+
+ul {
+  color: black ;
+  margin: 3px 40px 3px;
+}
+
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+

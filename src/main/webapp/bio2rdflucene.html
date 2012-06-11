@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the    -->
+<!-- browser's rendering engine into               -->
+<!-- "Standards Mode". Replacing this declaration  -->
+<!-- with a "Quirks Mode" doctype may lead to some -->
+<!-- differences in layout.                        -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!--                                                               -->
+    <!-- Consider inlining CSS to reduce the number of requested files -->
+    <!--                                                               -->
+    <link type="text/css" rel="stylesheet" href="bio2rdflucene.css">
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>Search Bio2RDF Lucene Indexes</title>
+
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="bio2rdflucene/bio2rdflucene.nocache.js"></script>
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body>
+
+    <!-- OPTIONAL: include this if you want history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <h2>Search Bio2RDF Lucene Indexes</h2>
+    <h3>Example queries</h3>
+<p>To search all namespaces in Bio2RDF, and retrieve results as XML (the default content-type) or JSON:</p>
+<ul>
+<li><a href="search?query=cell">query=cell</a></li>
+<li><a href="search?query=cell&format=json">query=cell&format=json</a></li>
+</ul>
+<p>To search all namespaces in Bio2RDF, and retrieve results as XML (the default) or JSON, but return the text content-type:</p>
+<ul>
+<li><a href="search?query=cell&asText=true">query=cell&asText=true</a></li>
+<li><a href="search?query=cell&format=json&asText=true">query=cell&format=json&asText=true</a></li>
+</ul>
+<p>To restrict your search to a specific namespace:</p>
+<ul>
+<li><a href="search?query=cell&ns=go">query=cell&ns=go</a></li>
+<li><a href="search?query=cell&ns=go&asText=true">query=cell&ns=go&asText=true</a></li>
+<li><a href="search?query=cell&ns=go&format=json">query=cell&ns=go&format=json</a></li>
+<li><a href="search?query=cell&ns=go&format=json&asText=true">query=cell&ns=go&format=json&asText=true</a></li>
+</ul>
+<h3>Understanding search results</h3>
+<p>Each search result consists of the URI of the entity matching the input search term, its label (rdfs:label), its type (rdf:type) and, if found, its definition (obo:definition).</p>
+<p>If the search was not restricted by namespace, the results also include the number of hits for the 5 namespaces with the most search results.</p>
+<p>Specifically, XML results will take the following form:</p>
+<p>&lt;results&gt;<br/>&nbsp; &nbsp;&lt;bio2rdfHits&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&lt;result&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;uri&gt;URI of result 1&lt;/uri&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;name&gt;Name of result 1&lt;/name&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;type&gt;Type of result 1&lt;/type&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;definition&gt;Definition of result 1&lt;/definition&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&lt;/result&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&lt;result&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;uri&gt;URI of result 2&lt;/uri&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;name&gt;Name of result 2&lt;/name&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;type&gt;Type of result 2&lt;/type&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;definition&gt;Definition of result 2&lt;/definition&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&lt;/result&gt;<br/>&nbsp; &nbsp;&lt;/bio2rdfHits&gt;<br/>&nbsp; &nbsp;&lt;nsHits&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&lt;nsHit&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;ns&gt;Name of source&lt;/ns&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;prefix&gt;Namespace prefix&lt;/prefix&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&lt;count&gt;Number of search hits&lt;/count&gt;<br/>&nbsp; &nbsp;&nbsp; &nbsp;&lt;/nsHit&gt;<br/>&nbsp; &nbsp;&lt;/nsHits&gt;<br/>&lt;/results&gt;</p>
+
+<h3>Datasets available to search*</h3>
+<ul>
+<li>affymetrix</li>
+<li>bind</li>
+<li>biocyc</li>
+<li>chebi</li>
+<li>cpath</li>
+<li>dbpedia</li>
+<li>go</li>
+<li>hgnc</li>
+<li>iproclass</li>
+<li>kegg</li>
+<li>mgi</li>
+<li>ncbi</li>
+<li>obo</li>
+<li>reactome</li>
+</ul>
+<p>*uniprot is also indexed, but searching it currently exceeds the capacity of the server.</p>
+</body>
+</html>

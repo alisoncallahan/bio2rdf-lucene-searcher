@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='bio2rdflucene.bio2rdflucene' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/search" class="bio2rdflucene.server.SearchBio2rdfServlet"/>
+
+</module>
